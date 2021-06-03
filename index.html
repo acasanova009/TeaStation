@@ -16,7 +16,7 @@
   </head>
   <body>
     <!-- navbutton -->
-    <span class="nav-btn" id="nav-btn">
+    <span class="nav-btn" id="navBtn">
       <i class="fas fa-bars"></i>
     </span>
     <!-- end of navbutton -->
@@ -24,7 +24,7 @@
     <!-- navbar -->
     <nav class="navbar" id="navbar">
       <div class="navbar-header">
-        <span class="nav-close-btn" id="nav-close">
+        <span class="nav-close-btn" id="navClose">
           <i class="fas fa-times"></i>
         </span>
       </div>
@@ -273,7 +273,7 @@
 
         <article class="contact-form">
           <h3>contact us</h3>
-          <form>
+          <form action="https://formspree.io/f/xknkryoy" method="POST">
             <div class="contact-form-group">
               <input
                 type="text"
@@ -315,30 +315,13 @@
       </div>
       <div class="footer-text">
         <h4>
-          &copy;<span id="date">2021</span>
+          &copy;<span id="date"></span>
           <span class="footer-text-company"> tea station</span> all rights
           reserved
         </h4>
       </div>
     </footer>
 
-    <!-- JS -->
-    <script type="text/javascript">
-      // setup nav
-      const navBtn = document.getElementById("nav-btn");
-      const navbar = document.getElementById("navbar");
-      const navClose = document.getElementById("nav-close");
-      // show nav
-      navBtn.addEventListener("click", () => {
-        navbar.classList.add("showNav");
-      });
-      // close nav
-      navClose.addEventListener("click", () => {
-        navbar.classList.remove("showNav");
-      });
-      //setup date
-      const date = (document.getElementById("date").innerHTML =
-        new Date().getFullYear());
-    </script>
+    <script src="app.js"></script>
   </body>
 </html>

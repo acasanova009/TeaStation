@@ -180,6 +180,7 @@ p {
 }
 .showNav {
   transform: translateX(0);
+  /* transform: var(--transition); */
 }
 .navbar-header {
   text-align: right;
