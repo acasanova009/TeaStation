@@ -146,6 +146,8 @@ p {
   outline-offset: 0.25rem;
   font-size: 1.2rem;
   padding: 1rem 1.7rem;
+
+  animation: scaleBtn 3s linear 1;
 }
 .btn:hover {
   color: var(--clr-primary);
@@ -159,10 +161,75 @@ p {
   left: 5%;
   font-size: 2.5rem;
   z-index: 1;
-  color: var(--clr-white);
+  color: var(--clr-primary);
   cursor: pointer;
+
+  animation: bounce 2s ease 0s infinite;
+}
+/* Nav button animation */
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-200px);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateX(50px);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(200px);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateX(-50px);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes scaleBtn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  /* 50% {
+    transform: scale(2);
+    opacity: 0.5;
+  } */
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 /* Nav bar */
 .navbar {
   height: 100vh;
@@ -174,9 +241,10 @@ p {
   left: 0;
 
   background-color: var(--clr-grey-10);
-  box-shadow: 2px 0 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 0 2px rgba(0, 0, 0, 0.2);
 
   transform: translateX(-100%);
+  transition: var(--transition);
 }
 .showNav {
   transform: translateX(0);
@@ -222,7 +290,7 @@ p {
 }
 @media screen and (min-width: 768px) {
   .navbar {
-    width: 20%;
+    width: 30%;
     max-width: 20rem;
   }
 }
@@ -253,6 +321,7 @@ p {
   font-family: var(--ff-secondary);
   color: var(--clr-primary);
   /* Animation */
+  animation: slideFromRight 5s ease-in-out 1;
 }
 
 .banner h1 {
@@ -260,17 +329,19 @@ p {
   color: var(--clr-white);
   margin-top: 1.25rem;
   margin-bottom: 2rem;
+
+  animation: slideFromLeft 5s ease-in-out 1;
 }
 .content-dividor {
-  height: 0.5rem;
+  height: -0.5rem;
   background: linear-gradient(
     to right,
     var(--clr-primary),
-    #e9b949,
+    #e9b99,
     var(--clr-primary)
   );
 }
-
+-
 /* SKILLS */
 
 .skills {
