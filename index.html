@@ -12,8 +12,32 @@
     />
     <!-- custom css -->
     <link rel="stylesheet" href="./css/styles.css" />
+    <!-- <script src="app.js"></script> -->
   </head>
   <body>
+    <!-- navbutton -->
+    <span class="nav-btn" id="nav-btn">
+      <i class="fas fa-bars"></i>
+    </span>
+    <!-- end of navbutton -->
+
+    <!-- navbar -->
+    <nav class="navbar" id="navbar">
+      <div class="navbar-header">
+        <span class="nav-close-btn" id="nav-close">
+          <i class="fas fa-times"></i>
+        </span>
+      </div>
+      <ul class="nav-items">
+        <li><a href="index.html" class="nav-link">home</a></li>
+        <li><a href="skills.html" class="nav-link">skills</a></li>
+        <li><a href="about.html" class="nav-link">about</a></li>
+        <li><a href="products.html" class="nav-link">products</a></li>
+      </ul>
+    </nav>
+
+    <!-- end of navbar -->
+
     <!-- header -->
 
     <header class="header">
@@ -217,46 +241,104 @@
 
     <section class="contact">
       <div class="section-center clearfix">
-        <div class="section-title contact-title">
-          <h3>We are glad to hear from you</h3>
-          <h2>Contact us</h2>
-        </div>
-        <div class="contact-info">
-          <div>
-            <i class="fas fa-mortar-pestle fa-fw service-icon"></i>
-            <span>Adress</span>
+        <article class="contact-info">
+          <div class="contact-item">
+            <h4>
+              <span class="contact-icon-container">
+                <i class="fas fa-mortar-pestle fa-fw service-icon"></i> </span
+              >Adress
+            </h4>
+
+            <p>Av. Insurgentes sur 3493</p>
           </div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-          <div>
-            <i class="fas fa-mortar-pestle fa-fw service-icon"></i>
-            <span>Adress</span>
+          <div class="contact-item">
+            <h4>
+              <span class="contact-icon-container">
+                <i class="fas fa-envelope fa-fw service-icon"></i> </span
+              >Email
+            </h4>
+
+            <p>contact@company.com</p>
           </div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-        </div>
-        <div class="contact-form-container">
-          <form class="contact-form" action="">
-            <input type="text" name="name" id="name" placeholder="Name" />
+          <div class="contact-item">
+            <h4>
+              <span class="contact-icon-container">
+                <i class="fas fa-phone fa-fw service-icon"></i> </span
+              >Phone
+            </h4>
+
+            <p>+52 (988) 456 15 78</p>
+          </div>
+        </article>
+
+        <article class="contact-form">
+          <h3>contact us</h3>
+          <form>
+            <div class="contact-form-group">
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                class="form-input"
+              />
+              <!-- <br /> -->
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                class="form-input"
+              />
+              <!-- <br /> -->
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Message"
+                class="form-input"
+              ></textarea>
+            </div>
             <br />
-            <input type="email" name="email" id="email" placeholder="Email" />
-            <br />
-            <textarea
-              name="textarea"
-              id="textarea"
-              cols="22"
-              rows="10"
-              placeholder="Message"
-            >
-Message
-            </textarea>
-            <br />
-            <input class="btn" type="submit" value="Send" />
+            <input class="btn submit-btn" type="submit" value="Send" />
           </form>
-        </div>
+        </article>
       </div>
     </section>
 
+    <!-- footer-->
+
+    <footer class="footer">
+      <div class="footer-icons">
+        <a href="" class="footer-icon-link"><i class="fab fa-facebook"></i></a>
+        <a href="" class="footer-icon-link">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="footer-icon-link"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="footer-text">
+        <h4>
+          &copy;<span id="date">2021</span>
+          <span class="footer-text-company"> tea station</span> all rights
+          reserved
+        </h4>
+      </div>
+    </footer>
+
     <!-- JS -->
-    <script src="app.js"></script>
-    <!-- JS over -->
+    <script type="text/javascript">
+      // setup nav
+      const navBtn = document.getElementById("nav-btn");
+      const navbar = document.getElementById("navbar");
+      const navClose = document.getElementById("nav-close");
+      // show nav
+      navBtn.addEventListener("click", () => {
+        navbar.classList.add("showNav");
+      });
+      // close nav
+      navClose.addEventListener("click", () => {
+        navbar.classList.remove("showNav");
+      });
+      //setup date
+      const date = (document.getElementById("date").innerHTML =
+        new Date().getFullYear());
+    </script>
   </body>
 </html>
